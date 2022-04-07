@@ -1,0 +1,9 @@
+<h1>votre nom est: {{name}} </h1>
+<h1>votre adresse est: {{adr}} </h1>
+<h1>votre e-mail est: {{mail}} </h1>
+<ul *ngIf="showHobbies" >
+    <li *ngFor="let hobbie of hobbies; let i=index">
+    {{hobbie}} <button type="button" class="btn btn-danger" (click)="Supprimer(i)"  >Supprimer</button>
+    </li>
+</ul>
+<button type="button" (click)="liste()">{{textButton}} </button>
