@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Article } from '../article';
 
 @Component({
   selector: 'app-articles',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class ArticlesComponent implements OnInit {
 
   titre = 'Les articles du jour';
-  listeArticles =
+  listeArticles :Article[]=
     [{
       titre: 'Le championnat du monde', contenu: 'Le champion du monde de cette année est....',
       auteur: 'Med Taher', date: '12/12/2005'
