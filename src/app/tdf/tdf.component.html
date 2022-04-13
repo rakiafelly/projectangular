@@ -1,26 +1,33 @@
-<form>
-    <fieldset>
-        <legend>Informations générales</legend>
-        <div class="div1">
-            <label for="name">Nom</label>
-            <input type="text" name="name"><br>
-            <label for="email">E-mail</label>
-            <input type="email" name="email">
-            <fieldset>
-                <legend>Informations de payement</legend>
-                <div class="div0">
-                    <label for="carte">Type de carte</label>
-                    <input type="text" name="carte"><br>
-                    <label for="ncarte">Numero de carte</label>
-                    <input type="number" name="ncarte"><br>
-                    <label for="exp">Date d'expiration</label>
-                    <input type="date" name="exp"><br>
-                    <label for="cod">Code</label>
-                    <input type="text"><br>
-                </div>
+<form #userForm="ngForm" (ngSubmit)="onSubmit()" >
+    {{userForm.value|json}}
+    <!-- {{userModel |json}} -->
 
-            </fieldset>
+    <legend>Informations générales</legend>
+    <div class="form-group">
+        <label for="name">Nom</label>
+            <input type="text" required #name="ngModel" class="form-control"  [class.is-invalid]="name.invalid && name.touched" [(ngModel)]="userModel.name" name="name"><br>
+   <!-- <small  class="text-danger"  >the name is required</small> -->
         </div>
-        <button>Ajouter</button>
-    </fieldset>
+    <div class="form-group">
+        <label for="email">E-mail</label>
+        <input type="email" required  #email="ngModel" class="form-control"   [class.is-invalid]="email.invalid && email.touched" [(ngModel)]="userModel.email" name="email">
+    </div>
+    <div class="form-group">
+        <label for="carte">Type de carte</label>
+        <input type="text"  required #carte="ngModel" class="form-control"   [class.is-invalid]="carte.invalid && carte.touched"  [(ngModel)]="userModel.carte" name="carte"><br>
+    </div>
+    <div class="form-group">
+        <label for="ncarte">Numero de carte</label>
+        <input type="number" required  #ncarte="ngModel" class="form-control"   [class.is-invalid]="ncarte.invalid && ncarte.touched"  [(ngModel)]="userModel.ncarte"  name="ncarte"><br>
+    </div>
+    <!-- <div class="form-group">
+        <label for="exp">Date d'expiration</label>
+        <input type="date" name="exp" class="form-control" [ngModel]="userModel.date" name="exp" ><br>
+    </div> -->
+    <div class="form-group">
+        <label for="cod">Code</label>
+        <input type="text" required  #cod="ngModel" class="form-control"  pattern="^\d{16}$"   [class.is-invalid]="cod.invalid && cod.touched" [(ngModel)]="userModel.cod" name="cod" ><br>
+    </div>
+    <button >Ajouter</button>
+
 </form>

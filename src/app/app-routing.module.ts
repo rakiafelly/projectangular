@@ -4,9 +4,18 @@ import { AreaComponent } from './area/area.component';
 import { UserComponent } from './user/user.component';
 import { ArticlesComponent } from './articles/articles.component';
 import { TdfComponent } from './tdf/tdf.component';
+import { User } from './user';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 const routes: Routes = [
+  { path:'ReactiveForm',
+  component:ReactiveFormComponent,
+  },
   { path:'area',
   component:AreaComponent,
+  },
+  {
+    path:'user',
+    component:UserComponent
   },
   { path:'user',
   component:UserComponent,
