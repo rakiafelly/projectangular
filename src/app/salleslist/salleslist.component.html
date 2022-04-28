@@ -1,0 +1,3 @@
+<div *ngFor="let salle of salles; let i=index" >
+    <p>{{salle.nom}} <a [routerLink]="['/details',salle.id]" >details</a></p>
+</div>

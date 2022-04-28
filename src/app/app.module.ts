@@ -8,6 +8,9 @@ import { UserComponent } from './user/user.component';
 import { ArticlesComponent } from './articles/articles.component';
 import { TdfComponent } from './tdf/tdf.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { SalleslistComponent } from './salleslist/salleslist.component';
+import { SalleComponent } from './salle/salle.component';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +20,9 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
     ArticlesComponent,
     TdfComponent,
     ReactiveFormComponent,
+    SalleslistComponent,
+    SalleComponent,
+    ErrorComponent,
   ],
   imports: [
     BrowserModule,
